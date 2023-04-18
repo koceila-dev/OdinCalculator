@@ -1,0 +1,164 @@
+html,
+body {
+  height: 99%;
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  border: solid 3px #373b44;
+  background-color: white;
+  height: 460px;
+  width: 20%;
+}
+.calculatrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: inherit;
+}
+
+.screen {
+  border: solid 3px #373b44;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+}
+.currentOperation,
+.lastOperation {
+  text-align: right;
+  min-height: 19px;
+}
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-numbers {
+  display: grid;
+  grid-template: 25% 25% 25% 25% / 25% 25% 25% 25%;
+  margin-top: 40px;
+}
+.container-operators {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+/* CSS */
+.btn,
+.oprt {
+  cursor: pointer;
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.oprt:hover,
+.oprt:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+.oprt:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.btn:active {
+  background: var(--color);
+  color: #fff;
+}
+
+/* CSS */
+.clear,
+.delete {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -0.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.clear:focus {
+  color: #171e29;
+}
+.delete:focus {
+  color: #171e29;
+}
+
+.clear:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.clear:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+.delete:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.delete:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+}
